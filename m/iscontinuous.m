@@ -26,7 +26,7 @@ function [C, edgeL] = iscontinuous(edgeL, directed)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ISCONNECTED, ISSIMPLE
 %
 
 %   Author: Eric x. sun

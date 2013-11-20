@@ -17,7 +17,9 @@ function inc = adj2inc(adj, directed)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ADJ2ADJL, ADJ2EDGEL, ADJL2ADJ, ADJL2EDGEL, ADJL2INC, 
+%             EDGEL2ADJ, EDGEL2ADJL, EDGEL2INC, EDGEL2PAJEK, INC2ADJ, 
+%             INC2ADJL, INC2EDGEL
 %
 
 %   Author: Eric x. sun

@@ -20,7 +20,8 @@ function edgeL = model_BA_static()
 %   1.Goh K I, Kahng B, Kim D. Universal behavior of load distribution in 
 %     scale-free networks[J]. Physical Review Letters, 2001, 87(27): 278701.
 %   
-%   See also:
+%   See also: MODEL_BA_GROWING, MODEL_ER, MODEL_REGULAR1DLATTICE_PBC, 
+%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS
 %
 
 %   Author: Eric x. sun

@@ -14,7 +14,8 @@ function L = shortest_path_average_length(G, mode)
 %
 %   Ref:
 %
-%   See also: 
+%   See also: SHORTEST_PATH_DIJKSTRA, SHORTEST_PATH_DIJKSTRA_SIMPLE, 
+%             SHORTEST_PATH_SPFA, SPANNING_TREE_BFS
 %
 
 %   Author: Eric x. sun

@@ -32,7 +32,7 @@ function [S, G] = issimple(G, directed, mode)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ISCONNECTED, ISCONTINUOUS
 %
 
 %   Author: Eric x. sun

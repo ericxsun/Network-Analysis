@@ -62,7 +62,7 @@ function tree = binary_tree_generate(depth_max, binary_operator, ...
 %
 %   Ref:
 %
-%   See also: binary_tree_encode, binary_tree_decode, binary_tree_plot
+%   See also: BINARY_TREE_DECODE, BINARY_TREE_ENCODE, BINARY_TREE_PLOT
 %
 
 %   Author: Eric x. sun

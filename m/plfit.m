@@ -32,7 +32,7 @@ function [alpha, xmin, L]=plfit(x, varargin)
 %    
 %    For more information, try 'type plfit'
 %
-%    See also PLVAR, PLPVA
+%    See also PLPLOT, PLVAR, PLPVA
 
 % Version 1.0    (2007 May)
 % Version 1.0.2  (2007 September)

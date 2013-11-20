@@ -34,7 +34,9 @@ function adj = edgeL2adj(edgeL, directed)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ADJ2ADJL, ADJ2EDGEL, ADJ2INC, ADJL2ADJ, ADJL2EDGEL, ADJL2INC, 
+%             EDGEL2ADJL, EDGEL2INC, EDGEL2PAJEK, INC2ADJ, INC2ADJL, 
+%             INC2EDGEL
 %
 
 %   Author: Eric x. sun

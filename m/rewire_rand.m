@@ -16,7 +16,7 @@ function edgeL = rewire_rand(edgeL, k, components_func, p)
 %
 %   Ref:
 %
-%   See also: rewire_assort
+%   See also: REWIRE_ASSORT, REWIRE_DISASSORT, REWIRE_SA
 %
 
 %   Author: Eric x. sun

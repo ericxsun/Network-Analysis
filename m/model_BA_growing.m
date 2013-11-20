@@ -24,7 +24,8 @@ function edgeL = model_BA_growing(m0, m, N)
 %   1. Albert-László Barabási & Réka Albert (October 1999). "Emergence of 
 %      scaling in random networks". Science 286 (5439): 509–512.
 %   
-%   See also:
+%   See also: MODEL_BA_STATIC, MODEL_ER, MODEL_REGULAR1DLATTICE_PBC, 
+%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS
 %
 
 %   Author: Eric x. sun

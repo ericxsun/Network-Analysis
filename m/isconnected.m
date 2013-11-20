@@ -19,7 +19,7 @@ function C = isconnected(G, mode, varargin)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ISCONTINUOUS, ISSIMPLE
 %
 
 %   Author: Eric x. sun

@@ -19,7 +19,7 @@ function [nodes, nodes_index] = binary_tree_encode(epr)
 %
 %   Ref:
 %
-%   See also: binary_tree_decode, binary_tree_generate, binary_tree_plot
+%   See also: BINARY_TREE_DECODE, BINARY_TREE_GENERATE, BINARY_TREE_PLOT
 %
 
 %   Author: Eric x. sun

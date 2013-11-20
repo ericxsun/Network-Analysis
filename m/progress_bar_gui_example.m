@@ -10,7 +10,8 @@ function progress_bar_gui_example()
 %
 %   Ref:
 %
-%   See also: PROGRESS_BAR_CONSOLE_EXAMPLE
+%   See also: WAITBAR, PROGRESS_BAR_CONSOLE, PROGRESS_BAR_CONSOLE_EXAMPLE, 
+%             PROGRESS_BAR_GUI
 %
 
 %   Author: Eric x. sun

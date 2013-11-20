@@ -11,7 +11,8 @@ classdef progress_bar_console < handle
 %
 %   Ref:
 %
-%   See also: WAITBAR, PROGRESS_BAR_GUI, PROGRESS_BAR_CONSOLE_EXAMPLE
+%   See also: WAITBAR, PROGRESS_BAR_CONSOLE_EXAMPLE, PROGRESS_BAR_GUI, 
+%             PROGRESS_BAR_GUI_EXAMPLE
 %
 
 %   Author: Eric x. sun

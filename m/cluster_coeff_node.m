@@ -37,7 +37,7 @@ function C = cluster_coeff_node(G, mode)
 %   1. Watts D J, Strogatz S H. Collective dynamics of ‘small-world’ 
 %      networks[J]. Nature, 1998, 393(6684): 440-442.
 %
-%   See also: 
+%   See also: CLUSTER_COEFF_EDGE
 %
 
 %   Author: Eric x. sun

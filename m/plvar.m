@@ -26,7 +26,7 @@ function [alpha, xmin, n]=plvar(x, varargin)
 %
 %    For more information, try 'type plvar'
 %
-%    See also PLFIT, PLPVA
+%    See also PLFIT, PLPLOT, PLPVA
 
 % Version 1.0   (2007 May)
 % Version 1.0.2 (2007 September)

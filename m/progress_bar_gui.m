@@ -11,7 +11,8 @@ function progress_bar_gui(varargin)
 %
 %   Ref:
 %
-%   See also: WAITBAR, PROGRESS_BAR_CONSOLE, PROGRESS_BAR_GUI_EXAMPLE
+%   See also: WAITBAR, PROGRESS_BAR_CONSOLE, PROGRESS_BAR_CONSOLE_EXAMPLE,
+%             PROGRESS_BAR_GUI_EXAMPLE
 %
 
 %   Author: Eric x. sun

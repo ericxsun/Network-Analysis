@@ -14,7 +14,8 @@ function tree_nodes = spanning_tree_bfs(adjL, src)
 %
 %   Ref:
 %
-%   See also: 
+%   See also: SHORTEST_PATH_AVERAGE_LENGTH, SHORTEST_PATH_DIJKSTRA, 
+%             SHORTEST_PATH_DIJKSTRA_SIMPLE, SHORTEST_PATH_SPFA
 %
 
 %   Author: Eric x. sun

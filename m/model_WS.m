@@ -23,7 +23,8 @@ function edgeL = model_WS(p, K, N)
 %   1. Watts, D.J.; Strogatz, S.H. (1998). "Collective dynamics of 'small-
 %      world' networks.". Nature 393 (6684): 409–10.
 %
-%   See also:
+%   See also: MODEL_BA_GROWING, MODEL_BA_STATIC, MODEL_ER, 
+%             MODEL_REGULAR1DLATTICE_PBC, MODEL_REGULAR2DLATTICE_PBC
 %
 
 %   Author: Eric x. sun

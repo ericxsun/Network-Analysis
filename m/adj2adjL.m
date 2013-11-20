@@ -20,7 +20,9 @@ function adjL = adj2adjL(adj)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ADJ2EDGEL, ADJ2INC, ADJL2ADJ, ADJL2EDGEL, ADJL2INC, 
+%             EDGEL2ADJ, EDGEL2ADJL, EDGEL2INC, EDGEL2PAJEK, INC2ADJ, 
+%             INC2ADJL, INC2EDGEL
 %
 
 %   Author: Eric x. sun

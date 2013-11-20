@@ -16,7 +16,8 @@ function dist = shortest_path_dijkstra(G, S, mode)
 %
 %   Ref:
 %
-%   See also: 
+%   See also: SHORTEST_PATH_AVERAGE_LENGTH, SHORTEST_PATH_DIJKSTRA_SIMPLE, 
+%             SHORTEST_PATH_SPFA, SPANNING_TREE_BFS
 %
 
 %   Author: Eric x. sun

@@ -29,7 +29,7 @@ function C = cluster_coeff_edge(G, mode)
 %
 %   Ref:
 %
-%   See also: 
+%   See also: CLUSTER_COEFF_EDGE
 %
 
 %   Author: Eric x. sun

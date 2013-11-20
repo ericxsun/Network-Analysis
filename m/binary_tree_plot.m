@@ -45,7 +45,7 @@ function [x, y] = binary_tree_plot(height, remain_nodes, c, d, cl, cf1, cf2)
 %
 %   Ref:
 %
-%   See also: binary_tree_encode, binary_tree_decode, binary_tree_generate
+%   See also: BINARY_TREE_DECODE, BINARY_TREE_ENCODE, BINARY_TREE_GENERATE
 %
 
 %   Author: Eric x. sun

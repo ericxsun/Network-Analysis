@@ -22,7 +22,9 @@ function [edgeL, directed] = inc2edgeL(inc)
 %
 %   Ref:
 %
-%   See also:
+%   See also: ADJ2ADJL, ADJ2EDGEL, ADJ2INC, ADJL2ADJ, ADJL2EDGEL, ADJL2INC,
+%             EDGEL2ADJ, EDGEL2ADJL, EDGEL2INC, EDGEL2PAJEK, INC2ADJ, 
+%             INC2ADJL
 %
 
 %   Author: Eric x. sun
