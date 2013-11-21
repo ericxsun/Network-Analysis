@@ -25,13 +25,13 @@ function tree = binary_tree_generate(depth_max, binary_operator, ...
 %       n_nodes_real     : number of nodes in real tree
 %       nodes            : nodes in real tree(symbols)
 %       nodes_idx        : index of nodes of the real tree in full tree 
-%                           sequence
+%                          sequence
 %       nodes_bin        : binary nodes(with two children)
 %       nodes_bin_idx    : index of binary nodes
 %       nodes_un         : unary nodes(with one child)b
 %       nodes_un_idx     : index
 %       nodes_leaves     : leaves
-%       nodes_veaves_idx : index
+%       nodes_leaves_idx : index
 %       n_variables      : number of variables used in the tree
 %       n_constants      : number of constants used in the tree
 %
@@ -56,7 +56,7 @@ function tree = binary_tree_generate(depth_max, binary_operator, ...
 %       nodes_un         : ['exp', 'exp']'
 %       nodes_un_idx     : [3, 6]'
 %       nodes_leaves     : ['x11', 'x3']'
-%       nodes_veaves_idx : [2, 12]'
+%       nodes_leaves_idx : [2, 12]'
 %       n_variables      : 2
 %       n_constants      : 0
 %
