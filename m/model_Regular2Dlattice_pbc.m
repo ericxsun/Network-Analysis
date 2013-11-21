@@ -16,7 +16,7 @@ function adjL = model_Regular2Dlattice_pbc(L, pdist)
 %       MODEL_REGULAR2DLATTICE_PBC(3, 1)
 %
 %   returns:
-%       adjL{1} = [1; 2; 3; 5], ...
+%       adjL{1} = [1; 2; 3; 6], ...
 %   it looks like:
 %        | | | | |                +--->x
 %       -8-6-7-8-6-               |
