@@ -115,9 +115,9 @@ tree.n_constants      = 0;
 %construct
 depth = 0;
 
-chosed_idx = floor(n_operator * rand()) + 1;
-chosed_idx = chosed_idx(:);
-root       = operator(chosed_idx);
+chose_idx  = floor(n_operator * rand()) + 1;
+chose_idx  = chose_idx(:);
+root       = operator(chose_idx);
 tree.nodes = [tree.nodes; root];
 
 if not(isempty(tree.nodes))
@@ -163,11 +163,11 @@ while 1
             tree.nodes_leaves_idx = [tree.nodes_leaves_idx; cur_root_idx];
         elseif n_children(i) == 1
             if depth < depth_max - 1
-                chosed_idx = floor(n_op_var * rand()) + 1;
-                children   = op_var(chosed_idx);
+                chose_idx = floor(n_op_var * rand()) + 1;
+                children  = op_var(chose_idx);
             else
-                chosed_idx = floor(n_const_var * rand()) + 1;
-                children   = const_var(chosed_idx);
+                chose_idx = floor(n_const_var * rand()) + 1;
+                children  = const_var(chose_idx);
             end
             
             idx = cur_root_idx * 2;
@@ -178,17 +178,17 @@ while 1
             children = cell(2, 1);
             
             if depth < depth_max - 1
-                chosed_idx = floor(n_op_var * rand()) + 1;
-                children(1)= op_var(chosed_idx);
+                chose_idx  = floor(n_op_var * rand()) + 1;
+                children(1)= op_var(chose_idx);
                 
-                chosed_idx = floor(n_op_const_var * rand()) + 1;
-                children(2)= op_const_var(chosed_idx);
+                chose_idx  = floor(n_op_const_var * rand()) + 1;
+                children(2)= op_const_var(chose_idx);
             else
-                chosed_idx = floor(n_variables * rand()) + 1;
-                children(1)= variables(chosed_idx);
+                chose_idx  = floor(n_variables * rand()) + 1;
+                children(1)= variables(chose_idx);
                 
-                chosed_idx = floor(n_const_var * rand()) + 1;
-                children(2)= const_var(chosed_idx);
+                chose_idx  = floor(n_const_var * rand()) + 1;
+                children(2)= const_var(chose_idx);
             end
             
             idx = cur_root_idx * 2 + (0 : 1)';
