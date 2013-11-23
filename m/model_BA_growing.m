@@ -6,9 +6,9 @@ function edgeL = model_BA_growing(m0, m, N)
 %   initial graph, add nodes each iteration, final nodes respectively.
 %
 %   Algorithm:
-%   Each new node is connected to  existing nodes with a probability that 
-%   is proportional to the number of links that the existing nodes already 
-%   have.
+%   Each new node is connected to m existing nodes. The node, to be 
+%   connected with the new node, is selected with the probability that is 
+%   proportional to the number of links that the node already has.
 %
 %   Note:
 %   1. m0 >= 2, m <= m0.
