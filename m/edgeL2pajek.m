@@ -20,13 +20,13 @@ function edgeL2pajek(filename, edgeL, directed, ic, c)
 %           src dst value_for_edge c c_color
 %
 %   Example:
-%       filename = 'test.net'       
+%       filename = 'test.net';
 %       edgeL    = [0 1; 0 2; 1 2];
 %       directed = false;
 %       ic = {'Red', 'Green', 'Blue'};
 %       c  = {'Red', 'Green', 'Blue'};
 %
-%       EDGEL2PAJEK('test.net', edgeL, directed, ic, c)
+%       EDGEL2PAJEK(filename, edgeL, directed, ic, c)
 %   returns: (in file: 'test.net')
 %       *Vertices 3
 %           1 "v1" ic Red
@@ -76,7 +76,7 @@ try
     fp = fopen(filename, 'w', 'ieee-le');  %ieee-le: IEEE floating point
 
     %nodes
-    nodes_label = cellstr(strcat('v', num2str(nodes)));
+    nodes_label = cellstr(strcat('v', num2str(nodes, '%-d')));
     n_nodes     = length(nodes);
     
     fprintf(fp, '*Vertices %d\n', n_nodes);
