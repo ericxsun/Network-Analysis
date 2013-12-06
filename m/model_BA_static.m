@@ -21,7 +21,7 @@ function edgeL = model_BA_static()
 %     scale-free networks[J]. Physical Review Letters, 2001, 87(27): 278701.
 %   
 %   See also: MODEL_BA_GROWING, MODEL_ER, MODEL_REGULAR1DLATTICE_PBC, 
-%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS
+%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS, MODEL_STAR
 %
 
 %   Author: Eric x. sun

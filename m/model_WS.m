@@ -24,7 +24,7 @@ function edgeL = model_WS(p, K, N)
 %      world' networks.". Nature 393 (6684): 409–10.
 %
 %   See also: MODEL_BA_GROWING, MODEL_BA_STATIC, MODEL_ER, 
-%             MODEL_REGULAR1DLATTICE_PBC, MODEL_REGULAR2DLATTICE_PBC
+%             MODEL_REGULAR1DLATTICE_PBC, MODEL_REGULAR2DLATTICE_PBC, MODEL_STAR
 %
 
 %   Author: Eric x. sun

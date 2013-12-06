@@ -21,7 +21,7 @@ function edgeL = model_ER(p, N)
 %
 %   See also: MODEL_BA_GROWING, MODEL_BA_STATIC, 
 %             MODEL_REGULAR1DLATTICE_PBC, MODEL_REGULAR2DLATTICE_PBC, 
-%             MODEL_WS
+%             MODEL_WS, MODEL_STAR
 %
 
 %   Author: Eric x. sun

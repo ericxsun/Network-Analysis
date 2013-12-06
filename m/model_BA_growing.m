@@ -25,7 +25,7 @@ function edgeL = model_BA_growing(m0, m, N)
 %      scaling in random networks". Science 286 (5439): 509–512.
 %   
 %   See also: MODEL_BA_STATIC, MODEL_ER, MODEL_REGULAR1DLATTICE_PBC, 
-%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS
+%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS, MODEL_STAR
 %
 
 %   Author: Eric x. sun

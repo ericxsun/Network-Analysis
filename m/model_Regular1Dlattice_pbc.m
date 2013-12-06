@@ -17,7 +17,7 @@ function adjL = model_Regular1Dlattice_pbc(N, pdist)
 %   Ref:
 %
 %   See also: MODEL_BA_GROWING, MODEL_BA_STATIC, MODEL_ER, 
-%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS
+%             MODEL_REGULAR2DLATTICE_PBC, MODEL_WS, MODEL_STAR
 %
 
 %   Author: Eric x. sun
