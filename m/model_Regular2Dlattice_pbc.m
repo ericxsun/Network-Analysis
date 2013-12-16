@@ -43,7 +43,7 @@ function adjL = model_Regular2Dlattice_pbc(L, pdist)
 
 %--------------------------------------------------------------------------
 
-assert(0 < L && mod(L, 2) == 1, '0 < L and odd value is required.');
+assert(0 < L, 'L > 0 is required.');
 
 msg = sprintf('0 < pdist <= %d is required.', L);
 assert(0 < pdist && pdist <= L, msg);

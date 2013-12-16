@@ -38,7 +38,7 @@ function adjL = model_smallworld_kleinberg2D(L, q, alpha, adjL, pdist)
 
 %-------------------------------------------------------------------------------
 
-assert(0 < L && mod(L, 2) == 1, '0 < L and odd value is required.');
+% assert(0 < L && mod(L, 2) == 1, '0 < L and odd value is required.');
 
 N = L*L;
 
