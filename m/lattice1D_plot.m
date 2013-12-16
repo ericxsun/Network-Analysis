@@ -57,6 +57,9 @@ axis equal;
 axis off;
 hold on;
 
+%local contacts
+plot(haxes, xpoints, ypoints, '-', 'color', local);
+
 %long-range contacts
 if nargin > 1 && ~isempty(find(not(cellfun(@isempty, adjL)), 1))
     N = size(adjL, 1);
@@ -83,8 +86,8 @@ if nargin > 1 && ~isempty(find(not(cellfun(@isempty, adjL)), 1))
     end
 end
 
-%local contacts
-plot(haxes, xpoints, ypoints, '-o', 'markersize', 13, 'MarkerFaceColor', ...
+%points
+plot(haxes, xpoints, ypoints, 'o', 'markersize', 20, 'MarkerFaceColor', ...
      [0.96 0.96 0.86], 'color', local);
 text(xpoints(1:L), ypoints(1:L), nodes, 'parent', haxes, ...
      'horizontalalignment', 'center');

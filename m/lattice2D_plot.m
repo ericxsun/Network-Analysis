@@ -50,7 +50,7 @@ end
 xlines = [xpoints([1:L, 1:L+1:L^2]);     xpoints([L^2:-1:L^2-L+1, 1:L+1:L^2])];
 ylines = [ypoints([1:L, 1:L  :L^2-L+1]); ypoints([1:L,            L:L:L^2])];
 
-hfigure = figure('color', 'w');
+hfigure = figure();
 haxes   = axes('parent', hfigure, 'xlim', [1, L], 'ylim', [1, L], ...
                'xcolor', 'k', 'ycolor', 'k', 'linewidth', 2);
 set(gca, 'ydir', 'reverse');
@@ -58,6 +58,9 @@ set(gca, 'xaxislocation', 'top');
 axis equal;
 axis off;
 hold on;
+
+%local contacts
+plot(xlines, ylines, 'c');
 
 %long-range contacts
 if nargin > 1 && ~isempty(find(not(cellfun(@isempty, adjL)), 1))
@@ -96,9 +99,8 @@ end
 nodes = 0: L*L-1;
 nodes = reshape(strtrim(cellstr(num2str(nodes(:)))), L, L);
 
-%local contacts
-plot(xlines, ylines, 'c');
-plot(haxes, xpoints, ypoints, 'o', 'markersize', 13, 'MarkerFaceColor', ...
+%points
+plot(haxes, xpoints, ypoints, 'o', 'markersize', 20, 'MarkerFaceColor', ...
      [0.96 0.96 0.86], 'color', local);
 text(xpoints(:), ypoints(:), nodes(:), 'parent', haxes, ...
      'horizontalalignment', 'center');
