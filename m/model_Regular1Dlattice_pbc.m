@@ -40,7 +40,7 @@ for i = 1 : N
     right = mod((id+1 :  1 : id+pdist), N);
     left  = mod((id-1 : -1 : id-pdist), N);
     
-    adjL{i} = unique([right, left]);
+    adjL{i} = unique([right; left]);
 end
 
 %--------------------------------------------------------------------------
