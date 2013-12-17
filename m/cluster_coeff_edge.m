@@ -1,7 +1,7 @@
-function C = cluster_coeff_edge(edgeL, directed)
+function C = cluster_coeff_edge(edgeL, adjL, directed)
 %CLUSTER_COEFF_EDGE Calculate the clustering coefficient of each edge.
-%   C = CLUSTER_COEFF_EDGE(edgeL, directed) returns the clustering  coeffient of
-%   each edge in a given graph described by the edge list.
+%   C = CLUSTER_COEFF_EDGE(edgeL, adjL, directed) returns the clustering 
+%   coeffient of each edge in a given graph described by the edge list.
 %
 %   Algorithm:
 %
@@ -14,8 +14,9 @@ function C = cluster_coeff_edge(edgeL, directed)
 %
 %   Example:
 %       edgeL = [0 1; 0 2; 1 2; 1 4; 2 3; 3 4; 5 6];
+%       adjL  = {[1; 2]; [0; 2; 4]; [0; 1; 3]; [2; 4]; [1; 3]; [6]; [5]};
 %
-%       CLUSTER_COEFF_EDGE(edgeL, false)
+%       CLUSTER_COEFF_EDGE(edgeL, adjL, false)
 %   returns:
 %       C = [0 1 0.33; 0 2 0.33; 1 4 0.25; 2 3 0; 3 4 0; 5 6 0]
 %
@@ -38,7 +39,6 @@ function C = cluster_coeff_edge(edgeL, directed)
 assert(size(edgeL, 2) >= 2, 'The edgeL must contain 2 columns at least.');
 
 [~, edgeL] = iscontinuous(edgeL, directed); %nodes start at 0
-adjL       = edgeL2adjL(edgeL, directed);   %nodes start at 0
 
 C = edgeL(:, 1:2);
 C(:, 3) = 0;
