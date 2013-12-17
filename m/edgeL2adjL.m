@@ -21,7 +21,7 @@ function adjL = edgeL2adjL(edgeL, directed)
 %
 %       EDGEL2ADJL(edgeL, directed)
 %   returns:
-%       adjL = {[1 3 4], [0, 2, 3], [1, 4], [0, 1], [0, 2]}
+%       adjL = {[1; 3; 4]; [0; 2; 3]; [1; 4]; [0; 1]; [0; 2]}
 %
 %   Ref:
 %
@@ -46,12 +46,12 @@ adjL  = cell(N, 1);
 
 if not(directed)
     for e = 1 : size(edgeL, 1)
-        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}, edgeL(e, 2)];
-        adjL{edgeL(e, 2)+1} = [adjL{edgeL(e, 2)+1}, edgeL(e, 1)];
+        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}; edgeL(e, 2)];
+        adjL{edgeL(e, 2)+1} = [adjL{edgeL(e, 2)+1}; edgeL(e, 1)];
     end
 else
     for e = 1 : size(edgeL, 1)
-        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}, edgeL(e, 2)];
+        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}; edgeL(e, 2)];
     end
 end
 
