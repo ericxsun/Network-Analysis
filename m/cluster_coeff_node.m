@@ -24,7 +24,7 @@ function C = cluster_coeff_node(G, mode)
 %            0 0 0 1 1 0
 %           ]
 %
-%       clustering_coeff_node(A, 'adj')
+%       CLUSTER_COEFF_NODE(A, 'adj')
 %   returns:
 %       0   1.0000
 %       1   1.0000
