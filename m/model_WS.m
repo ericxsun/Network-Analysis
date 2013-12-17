@@ -1,6 +1,6 @@
 function edgeL = model_WS(p, K, N)
 %MODEL_WS Generate an undirected connected small-world graph according to 
-%the Watss-Strogatz model(short average path length and high clustering 
+%the Watts-Strogatz model(short average path length and high clustering 
 %coefficient).
 %   edgeL = MODEL_WS(p, mk, N) returns a small-world graph.
 %
