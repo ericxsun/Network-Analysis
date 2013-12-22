@@ -1,9 +1,10 @@
-function T = decentralized_search_length_ties(edgeL_ties, directed, src, dst)
-%DECENTRALIZED_SEARCH_LENGTH_TIES To compute the delivery time on 1-D lattice.
-%   T = DECENTRALIZED_SEARCH_LENGTH_TIES(edgeL_ties, directed, src, dst) returns
-%   the delivery time of the message forward from src to dst on the weighted 
-%   graph defined by the edgeL_ties. If there is a path between src and dst, T 
-%   will be less than Inf, otherwise, it will be Inf.
+function T = decentralized_search_length_ties(edgeL_ties, directed, src, dst, ...
+                alpha)
+%DECENTRALIZED_SEARCH_LENGTH_TIES To compute the delivery time.
+%   T = DECENTRALIZED_SEARCH_LENGTH_TIES(edgeL_ties, directed, src, dst, alpha) 
+%   returns the delivery time of the message forward from src to dst on the 
+%   weighted graph defined by the edgeL_ties. If there is a path between src and
+%   dst, T will be less than Inf, otherwise, it will be Inf.
 %
 %   Algorithm:
 %   A greedy heuristic: each message holder forwards the message across a
@@ -14,6 +15,7 @@ function T = decentralized_search_length_ties(edgeL_ties, directed, src, dst)
 %      and 'weight' stand for nodes index at the ends of an edge and its weight 
 %      respectively. The node index starts at zero.
 %   2. A smoothing will be performed to avoid the zero length of ties.
+%   3. The 'alpha' is used to enhance or weaken the role of weak ties.
 %
 %   Example:
 %
@@ -29,9 +31,11 @@ function T = decentralized_search_length_ties(edgeL_ties, directed, src, dst)
 
 %-------------------------------------------------------------------------------
 
-assert(size(edgeL_ties, 2) >= 2, 'The edgeL_ties must contain 2 columns at least.');
+msg = 'The edgeL_ties must contain 2 columns at least.';
+assert(size(edgeL_ties, 2) >= 2, msg);
 
-[~, edgeL_ties] = iscontinuous(edgeL_ties, directed); %ids in edgeL_ties start at 0.
+%ids in edgeL_ties start at 0.
+[~, edgeL_ties] = iscontinuous(edgeL_ties, directed); 
 if size(edgeL_ties, 2) == 2
     edgeL_ties(:, 3) = 1;
 end
@@ -45,6 +49,12 @@ N = max(max(edgeL_ties(:, 1:2))) + 1;
 
 assert(0 <= src && src < N, sprintf('Err: src out of range [0, %d]', N-1));
 assert(0 <= dst && dst < N, sprintf('Err: dst out of range [0, %d]', N-1));
+
+if nargin <= 4
+    alpha = 1;
+end
+assert(0 <= alpha && alpha <= 1, 'Err: alpha should be in range [0 1]\n');
+
 
 maxT = N^2; %N-1
 T    = 0;
@@ -67,7 +77,7 @@ while 1
     ties = edgeL_ties(edgeL_ties(:,1) == src, 2:3);
     
     %weak ties are more likely to be chose.
-    ties(:, 2) = 1 - ties(:, 2);
+    ties(:, 2) = (1 - ties(:, 2)).^alpha;
     ties(:, 2) = ties(:, 2) ./ sum(ties(:, 2));
     
     ties(ismember(ties(:,1), had_message_nodes), :) = [];
