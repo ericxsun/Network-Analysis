@@ -48,7 +48,7 @@ if id_min ~= 0
 end
 
 nodes = edgeL(:, 1:2);
-nodes = sort(unique(nodes(:)));
+nodes = unique(nodes(:));
 
 N = length(nodes);
 
