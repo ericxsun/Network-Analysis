@@ -1,4 +1,4 @@
-function mail2phone(smtp_server, account, password, dst_addr, subject, ...
+function mail2phone(smtp_server, account_mail, password, dst_addr, subject, ...
                     content)
 %MAIL2PHONE Send an email to the given mail account.
 %   MAIL2PHONE(smtp_server, account, password, dst_addr, subject, content) 
@@ -9,7 +9,8 @@ function mail2phone(smtp_server, account, password, dst_addr, subject, ...
 %   Note:
 %
 %   Example:
-%       MAIL2PHONE('smtp.139.com', account, password, 'test', 'test')
+%       MAIL2PHONE('smtp.139.com', account_mail, password, account_mail, ...
+%                  'test', 'test')
 %
 %   Ref:
 %
@@ -31,7 +32,7 @@ if nargin < 5
     content = '';
 end
 
-from_mailAddr = account;
+from_mailAddr = account_mail;
 password      = password';
 
 setpref('Internet', 'E_mail',        from_mailAddr);
@@ -45,7 +46,7 @@ props.setProperty('mail.smtp.auth', 'true');
 %                   'javax.net.ssl.SSLSocketFactory');
 % props.setProperty('mail.smtp.socketFactory.prot', '465');
 
-fprintf('send email to %m\n', account);
+fprintf('send email to %m\n', account_mail);
 
 sendmail(dst_addr, subject, content);
 
