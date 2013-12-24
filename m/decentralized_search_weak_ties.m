@@ -1,4 +1,4 @@
-function T = decentralized_search_length_ties(edgeL_ties, directed, src, dst)
+function T = decentralized_search_weak_ties(edgeL_ties, directed, src, dst)
 %DECENTRALIZED_SEARCH_LENGTH_TIES To compute the delivery time.
 %   T = DECENTRALIZED_SEARCH_LENGTH_TIES(edgeL_ties, directed, src, dst) returns
 %   the delivery time of the message forward from src to dst on the weighted 
@@ -6,8 +6,8 @@ function T = decentralized_search_length_ties(edgeL_ties, directed, src, dst)
 %   will be less than Inf, otherwise, it will be Inf.
 %
 %   Algorithm:
-%   A greedy heuristic: each message holder forwards the message across a
-%   tie with probability which is proportional to the length of ties.
+%   A greedy heuristic: each message holder forwards the message across a tie 
+%   with probability which is proportional to the length of ties.
 %
 %   Note:
 %   1. Each line in edgeL is expressed as [src dst weight] where 'src', 'dst' 
@@ -69,7 +69,6 @@ while 1
     ties = edgeL_ties(edgeL_ties(:,1) == src, 2:3);
     
     %weak ties are more likely to be chose.
-    ties(:, 2) = 1 - ties(:, 2);
     ties(:, 2) = ties(:, 2) ./ sum(ties(:, 2));
     
     ties(ismember(ties(:,1), had_message_nodes), :) = [];
