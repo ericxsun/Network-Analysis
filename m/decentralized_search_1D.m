@@ -15,6 +15,9 @@ function T = decentralized_search_1D(L, adjL, src, dst, pbc)
 %   2. The node in the adjacency list starts at zero, i.e., adjL{i} represents 
 %      the neighbors of node i-1, i ranges from 1 to N, where N is the number 
 %      of nodes.
+%   3. In the model of Kleinberg(see Ref), the information about the geometry 
+%      distance between two nodes always exists, no matter whether there is a 
+%      link connected the two nodes or not.
 %
 %   Example:
 %
@@ -58,8 +61,8 @@ if ~isempty(find(not(cellfun(@isempty, adjL)), 1))
         
         T = T + 1;
         
-        %forward the message from src to its neighbor which is the nearest
-        %one to dst in lattice distance.
+        %forward the message from src to its neighbor which is the nearest one 
+        %to dst in lattice distance.
         xdst = dst;
         
         Nsrc = adjL{src+1};
