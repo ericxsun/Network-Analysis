@@ -7,13 +7,14 @@ function T = decentralized_search_weak_ties(edgeL_ties, directed, src, dst)
 %
 %   Algorithm:
 %   A greedy heuristic: each message holder forwards the message across a tie 
-%   with probability which is proportional to the length of ties.
+%   with probability which is proportional to the length of ties. Repeating 
+%   delivery will be avoid.
 %
 %   Note:
 %   1. Each line in edgeL is expressed as [src dst weight] where 'src', 'dst' 
 %      and 'weight' stand for nodes index at the ends of an edge and its weight 
 %      respectively. The node index starts at zero.
-%   2. A smoothing will be performed to avoid the zero length of ties.
+%   3. This algorithm could be unstable, one should run it for several times.
 %
 %   Example:
 %
@@ -55,7 +56,6 @@ had_message_nodes = src;
 while 1
     if T > maxT
         T = inf;
-        
         break;
     end
     
@@ -66,37 +66,27 @@ while 1
     T = T + 1;
     
     %forward the message
-    ties = edgeL_ties(edgeL_ties(:,1) == src, 2:3);
+    Nsrc_ties = edgeL_ties(edgeL_ties(:,1) == src, 2:3);
+    Nsrc_ties(ismember(Nsrc_ties(:,1), had_message_nodes), :) = [];
     
-    %weak ties are more likely to be chose.
-    ties(:, 2) = ties(:, 2) ./ sum(ties(:, 2));
+    %to avoid repeating delivery
+    if isempty(Nsrc_ties)
+        T = inf;
+        continue;
+    end    
     
-    ties(ismember(ties(:,1), had_message_nodes), :) = [];
-    
-    %choose the next src
-    while 1
-        if isempty(ties)
-            T = inf;
-            
-            break;
-        end
-        
-        %next_src
-        if ismember(dst, ties(:,1))
-            src = dst;
-            
-            break;
-        end
-        
-        if length(ties(:,2)) == 1
-            src = ties(:, 1);
-        else
-            src = randsample(ties(:,1), 1, true, ties(:,2));
-        end
-        
-        had_message_nodes = [had_message_nodes; src];
-        break;
+    if ismember(dst, Nsrc_ties(:,1))
+        src = dst;
+        continue;
     end
+
+    if size(Nsrc_ties, 1) == 1
+        src = Nsrc_ties(1, 1);
+    else
+        src = randsample(Nsrc_ties(:,1), 1, true, Nsrc_ties(:,2));
+    end
+    
+    had_message_nodes = unique([had_message_nodes; src]);
 end
 
 %-------------------------------------------------------------------------------
