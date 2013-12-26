@@ -1,9 +1,9 @@
 function T = decentralized_search_weak_ties_random(edgeL_ties, directed, src, dst)
-%DECENTRALIZED_SEARCH_LENGTH_TIES_random To compute the delivery time.
-%   T = DECENTRALIZED_SEARCH_LENGTH_TIES(edgeL_ties, directed, src, dst) returns
-%   the delivery time of the message forward from src to dst on the weighted 
-%   graph defined by the edgeL_ties. If there is a path between src and dst, T 
-%   will be less than Inf, otherwise, it will be Inf.
+%DECENTRALIZED_SEARCH_WEAK_TIES_RANDOM To compute the delivery time.
+%   T = DECENTRALIZED_SEARCH_WEAK_TIES_RANDOM(edgeL_ties, directed, src, dst) 
+%   returns the delivery time of the message forward from src to dst on the 
+%   weighted graph defined by the edgeL_ties. If there is a path between src and
+%   dst, T will be less than Inf, otherwise, it will be Inf.
 %
 %   Algorithm:
 %   A greedy heuristic: each message holder forwards the message across a tie 
@@ -31,7 +31,7 @@ function T = decentralized_search_weak_ties_random(edgeL_ties, directed, src, ds
 
 %-------------------------------------------------------------------------------
 
-msg = 'The edgeL_ties must contain 2 columns at least.';
+msg = 'Err: The edgeL_ties must contain 2 columns at least.';
 assert(size(edgeL_ties, 2) >= 2, msg);
 
 %ids in edgeL_ties start at 0.

@@ -37,7 +37,7 @@ function T = decentralized_search_degree_random(edgeL, adjL, degree, ...
 
 %-------------------------------------------------------------------------------
 
-assert(size(edgeL, 2) >= 2, 'The edgeL must contain 2 columns at least.');
+assert(size(edgeL, 2) >= 2, 'Err: The edgeL must contain 2 columns at least.');
 
 N = size(adjL, 1);
 assert(N == size(degree, 1), 'Err: size is not equal.');
