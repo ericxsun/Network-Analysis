@@ -51,7 +51,6 @@ if ~isempty(find(not(cellfun(@isempty, adjL)), 1))
     while 1
         if T > maxT
             T = inf;
-            
             break;
         end
         
@@ -94,7 +93,6 @@ if ~isempty(find(not(cellfun(@isempty, adjL)), 1))
         while 1
             if sum(isinf(dist)) == length(dist)
                 T = inf;
-                
                 break;
             end
             
@@ -104,7 +102,6 @@ if ~isempty(find(not(cellfun(@isempty, adjL)), 1))
             src = next_srcs(randi(length(next_srcs)));
             if ~isempty(src)
                 had_message_nodes = [had_message_nodes; src];
-                
                 break;
             end
             
