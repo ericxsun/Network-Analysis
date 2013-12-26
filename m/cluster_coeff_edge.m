@@ -7,9 +7,9 @@ function C = cluster_coeff_edge(edgeL, adjL, directed)
 %
 %   Note:
 %   1. For directed graph, only the outgoing edges will be considered.
-%   2. Each line in edgeL is expressed as [src dst weight] or [src dst], 
-%      where 'src', 'dst' and 'weight' stand for nodes index at the ends of 
-%      an edge and its weight respectively. The node index starts at zero.
+%   2. Each line in edgeL is expressed as [src dst weight] or [src dst], where 
+%      'src', 'dst' and 'weight' stand for nodes index at the ends of an edge 
+%      and its weight respectively. The node index starts at zero.
 %   3. The format of C: [src, dst, clustering coefficient].
 %
 %   Example:
