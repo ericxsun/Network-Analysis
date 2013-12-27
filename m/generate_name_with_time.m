@@ -30,20 +30,21 @@ end
 
 t = clock();
 
+computer_name = get_computername();
 if strcmp(prefix, '') == 1
-    name = '';
+    name = strcat(computer_name, '-');
 else
-    name = [prefix, '-'];
+    name = strcat(prefix, '-', computer_name, '-');
 end
 
-name = [name,                             ...
-        num2str(t(1),            '%04d'), ...   %year
-        num2str(t(2:3),         '-%02d'), ...   %-month-day
-        num2str(t(4:5),         '-%02d'), ...   %-hour-minute
-        num2str(fix(t(6)*1000), '-%05d')];      %-sec+ms
+name = strcat(name,                             ...
+              num2str(t(1),            '%04d'), ...   %year
+              num2str(t(2:3),         '-%02d'), ...   %-month-day
+              num2str(t(4:5),         '-%02d'), ...   %-hour-minute
+              num2str(fix(t(6)*1000), '-%05d'));      %-sec+ms
 
 if strcmp(suffix, '') ~= 1
-    name = [name, suffix];
+    name = strcat(name, suffix);
 end
 
 %--------------------------------------------------------------------------
