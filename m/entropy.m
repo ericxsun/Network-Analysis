@@ -11,7 +11,7 @@ function H = entropy(X)
 %
 %       ENTROPY(x)
 %   returns:
-%
+%       3.0958
 %
 %   Ref:
 %
