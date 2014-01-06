@@ -1,4 +1,7 @@
-/data/
+# Folders
+/Data/
+/Features/
+/Ref/
 
 *.py[cod]
 
