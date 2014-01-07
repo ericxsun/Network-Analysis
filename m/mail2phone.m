@@ -46,7 +46,7 @@ props.setProperty('mail.smtp.auth', 'true');
 %                   'javax.net.ssl.SSLSocketFactory');
 % props.setProperty('mail.smtp.socketFactory.prot', '465');
 
-fprintf('send email to %m\n', account_mail);
+fprintf('send email to %s\n', account_mail);
 
 sendmail(dst_addr, subject, content);
 
