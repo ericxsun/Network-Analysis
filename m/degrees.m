@@ -51,9 +51,11 @@ assert(strcmp('edgeL', mode) == 1 || strcmp('adj', mode) == 1, msg);
 if strcmp('adj', mode) == 1
     msg = 'Squared adjacency matrix is required.';
     assert(size(G, 1) == size(G, 2), msg);
+
+    N = size(G, 1);
     
-    degin = full(sum(G, 2));
-    degout= full(sum(G, 1));
+    degin = [(1:N)'-1, full(sum(G, 2))];
+    degout= [(1:N)'-1, (full(sum(G, 1)))'];
 elseif strcmp('edgeL', mode) == 1
     assert(size(G, 2) >= 2, 'The edgeL must contain 2 columns at least.');
     
