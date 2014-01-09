@@ -48,8 +48,11 @@ N = length(adjL);
 adj = sparse(N, N);
 
 for i = 1 : N
-	I   = ones(length(adjL{i}), 1);
-	adj = sparse(adj + sparse(i.*I, adjL{i}(:)+1, I, N, N));
+    len = length(adjL{i});
+    if len > 0
+        I = ones(len, 1);
+        adj = sparse(adj + sparse(i.*I, adjL{i}(:)+1, I, N, N));
+    end
 end
 
 %--------------------------------------------------------------------------
