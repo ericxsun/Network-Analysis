@@ -36,12 +36,16 @@ function edgeL = adjL2edgeL(adjL, directed)
 
 %--------------------------------------------------------------------------
 
+N     = size(adjL, 1);
 edgeL = [];
 
-for i = 1 : length(adjL)
-    for j = 1 : length(adjL{i})
-        edgeL = [edgeL; i-1, adjL{i}(j)];
-    end
+for i = 1 : N
+	len = length(adjL{i});
+
+	if len > 0
+		I = ones(len, 1);
+		edgeL = [edgeL; (i-1).*I, adjL{i}(:)];
+	end
 end
 
 [~, edgeL] = issimple(edgeL, directed, 'edgeL');
