@@ -41,7 +41,7 @@ if strcmp(tick, 'xtick')
     c = get(h, 'ytick');
 elseif strcmp(tick, 'ytick')
     a = get(h, 'yticklabel');
-    set(h, 'ytickalbe', []);
+    set(h, 'yticklabel', []);
     b = get(h, 'ytick');
     c = get(h, 'xtick');
 else
