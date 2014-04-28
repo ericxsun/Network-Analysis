@@ -10,10 +10,9 @@ function adjL = edgeL2adjL(edgeL, directed)
 %   1. Each line in edgeL is expressed as [src dst weight] or [src dst], 
 %      where 'src', 'dst' and 'weight' stand for nodes index at the ends of 
 %      an edge and its weight respectively. The node index starts at zero.
-%   2. The node in the adjacency list starts at zero, i.e., adjL{i}
-%      represents the neighbors of node i-1, i ranges from 1 to N, where N
-%      is the number of nodes.
-%   3. The edge weights will be lost in conversion.
+%   2. The node in the adjacency list starts at zero, i.e., adjL{i} has two
+%      column data, 1 for the neighbors of node i-1, 2 for the weight from node 
+%      i-1 to its neighbors, i ranges from 1 to N, where N is the number of nodes.
 %
 %   Example:
 %       edgeL = [0 1; 0 3; 0 4; 1 2; 1 3; 2 4];
@@ -21,7 +20,8 @@ function adjL = edgeL2adjL(edgeL, directed)
 %
 %       EDGEL2ADJL(edgeL, directed)
 %   returns:
-%       adjL = {[1; 3; 4]; [0; 2; 3]; [1; 4]; [0; 1]; [0; 2]}
+%       adjL = {[1 1; 3 1; 4 1]; [0 1; 2 1; 3 1]; [1 1; 4 1]; 
+%               [0 1; 1 1]; [0 1; 2 1]}
 %
 %   Ref:
 %
@@ -37,21 +37,27 @@ function adjL = edgeL2adjL(edgeL, directed)
 
 %--------------------------------------------------------------------------
 
-assert(size(edgeL, 2) >= 2, 'The edgeL must contain 2 columns at least.');
+[~, n_edgeL] = size(edgeL);
+assert(n_edgeL >= 2, 'The edgeL must contain 2 columns at least.');
+
+if n_edgeL == 2
+    edgeL(:, 3) = 1;
+end
 
 [~, edgeL] = iscontinuous(edgeL, directed); %ids in edgeL start at 0.
 
-N = max(max(edgeL(:, 1:2))) + 1;
-adjL  = cell(N, 1);
+N    = edgeL(:, 1:2);
+N    = length(unique(N(:))); 
+adjL = cell(N, 1);
 
 if not(directed)
     for e = 1 : size(edgeL, 1)
-        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}; edgeL(e, 2)];
-        adjL{edgeL(e, 2)+1} = [adjL{edgeL(e, 2)+1}; edgeL(e, 1)];
+        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}; edgeL(e, [2,3])];
+        adjL{edgeL(e, 2)+1} = [adjL{edgeL(e, 2)+1}; edgeL(e, [1,3])];
     end
 else
     for e = 1 : size(edgeL, 1)
-        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}; edgeL(e, 2)];
+        adjL{edgeL(e, 1)+1} = [adjL{edgeL(e, 1)+1}; edgeL(e, [2,3])];
     end
 end
 
